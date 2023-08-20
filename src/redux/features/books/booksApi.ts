@@ -23,6 +23,7 @@ const bookApi = api.injectEndpoints({
           genre = "",
           publicationYear = "",
         }: GetBooksParams) => {
+          
           let query = `/book?page=${page}&searchTerm=${searchTerm}&limit=${limit}`;
           if (genre !== "") {
             query += `&genre=${genre}`;
@@ -37,6 +38,7 @@ const bookApi = api.injectEndpoints({
       singleBook: builder.query({
         query: (id: string) => `/book/${id}`,
       }),
+      //add single book
       postBook: builder.mutation<PostBookResponse, { data: IBook }>({
         query: ({ data }: { data: IBook }) => ({
           url: `/book`,
@@ -45,6 +47,7 @@ const bookApi = api.injectEndpoints({
         }),
         invalidatesTags: ['books']
       }),
+      //update book 
       updateBook: builder.mutation<PostBookResponse, { id: string, data: IBook }>({
         query: ({ id, data }: { id: string; data: IBook }) => ({
           url: `/book/${id}`,
@@ -53,6 +56,7 @@ const bookApi = api.injectEndpoints({
         }),
         invalidatesTags: ['books']
       }),
+      //delete any book
       removeBook: builder.mutation({
         query: (id: string) => ({
           url: `/book/${id}`,
