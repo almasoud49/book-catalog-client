@@ -51,7 +51,7 @@ const bookApi = api.injectEndpoints({
       updateBook: builder.mutation<PostBookResponse, { id: string, data: IBook }>({
         query: ({ id, data }: { id: string; data: IBook }) => ({
           url: `/book/${id}`,
-          method: "PUT",
+          method: "PATCH",
           body: data,
         }),
         invalidatesTags: ['books']

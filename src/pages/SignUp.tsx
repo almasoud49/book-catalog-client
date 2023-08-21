@@ -32,14 +32,14 @@ const SignUp = () => {
       const handleSubmit = async(e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (password !== confirmPassword) {
-          setPasswordError("Passwords do not match");
+          setPasswordError("Passwords Do not Match");
           return;
         }
         setIsLoading(true);
         try {
           const formData: INewUser = { email, password, confirmPassword };
           await dispatch(createUser(formData) as any);
-          console.log("Signup successful!");
+          
           navigate("/login");
         } catch (error) {
           console.error("Signup error:", error);

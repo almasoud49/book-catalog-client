@@ -3,35 +3,25 @@ import { logout } from "../redux/features/users/userSlice";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 
 const Navbar = () => {
-const {accessToken} = useAppSelector((state)=> state.user);
+  const { accessToken } = useAppSelector((state) => state.user);
 
-const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
-const handleLogout = () => {
-    dispatch(logout)
-}
+  const handleLogout = () => {
+    dispatch(logout);
+  };
 
-
-return (
+  return (
     <nav className="bg-gray-800">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex">
-            
             <Link
               to="/"
               className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium"
             >
               Home
             </Link>
-            {accessToken && (
-              <Link
-                to="/profile"
-                className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Profile
-              </Link>
-            )}
           </div>
           <div className="flex">
             {!accessToken && (

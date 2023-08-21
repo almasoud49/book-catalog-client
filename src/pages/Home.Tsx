@@ -1,4 +1,3 @@
-import React from "react";
 import Book from "../components/Book"
 
 const Home = () => {
@@ -6,7 +5,7 @@ const Home = () => {
         <div>
             <Book/>
         </div>
-    );
+    )
 };
 
 export default Home;

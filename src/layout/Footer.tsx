@@ -1,31 +1,55 @@
 export default function Footer() {
-    const date = new Date();
-    const year = date.getFullYear();
-  
-    return (
-      <div className="bg-[#242630] text-secondary p-20">
-        <div className="flex justify-between">
-          <div className="flex gap-20">
-            <ul className="space-y-2">
-              <li>Upcoming</li>
-              <li>Shipping</li>
-              <li>How it works</li>
-            </ul>
-            <ul className="space-y-2">
-              <li>Support</li>
-              <li>Careers</li>
-            </ul>
-            <ul className="space-y-2">
-              <li>List your gear</li>
-              <li>Contact team</li>
-            </ul>
-          </div>
+  const date = new Date();
+  const year = date.getFullYear();
+
+  return (
+    <footer className="bg-gray-800 text-white ">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 text-center">
+        <div className="space-y-2">
+          <h3 className="text-xl font-semibold">Explore</h3>
+          <ul className="text-gray-300">
+            <li className="hover:text-white transition duration-300">
+              Upcoming
+            </li>
+            <li className="hover:text-white transition duration-300">
+              Shipping
+            </li>
+          </ul>
         </div>
-        <div className="flex w-full mt-20 gap-5">
-          <p>Privacy Policy</p>
-          <p>Terms & Condition</p>
-          <p className="ml-auto"> &#169; Book Catalog {year}</p>
+        <div className="space-y-2">
+          <h3 className="text-xl font-semibold">About</h3>
+          <ul className="text-gray-300">
+            <li className="hover:text-white transition duration-300">
+              Support
+            </li>
+            <li className="hover:text-white transition duration-300">
+              Careers
+            </li>
+          </ul>
+        </div>
+        <div className="space-y-2">
+          <h3 className="text-xl font-semibold">Contact</h3>
+          <ul className="text-gray-300">
+            <li className="hover:text-white transition duration-300">
+              List our books
+            </li>
+            <li className="hover:text-white transition duration-300">
+              Contact team
+            </li>
+          </ul>
         </div>
       </div>
-    );
-  }
+      <div className="container mx-auto  text-center">
+        <div className="flex justify-center items-center text-gray-300 text-sm space-x-5">
+          <p className="hover:text-white transition duration-300">
+            Privacy Policy
+          </p>
+          <p className="hover:text-white transition duration-300">
+            Terms & Conditions
+          </p>
+          <p>&#169; Book Catalog {year}</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
